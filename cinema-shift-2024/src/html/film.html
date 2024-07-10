@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница фильма</title>
+    <link rel="stylesheet" href="../styles/film.css">
+    <script src="../js/getCinemaFilmId.js" defer></script>
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="left-menu">
+            <p class="menu-item"><img src="../static/images/svg/logo.svg">Cinema</p>
+            <a href="#" class="menu-item"><img src="../static/images/svg/profile.svg">Профиль</a>
+            <a href="#" class="menu-item"><img src="../static/images/svg/tickets.svg">Билеты</a>
+        </div>
+        <div class="right-menu">
+            <a href="#" class="menu-item"><img src="../static/images/svg/exit.svg">Выйти</a>
+        </div>
+    </div>
+
+    <div class="back-button">
+        <a href="../../index.html"><img src="../static/images/svg/arrowBack.svg" alt="Назад">Назад</a>
+    </div>
+
+    <div class="content">
+        <div class="movie-info">
+            <img src="#" alt="Постер фильма" class="movie-poster" id="movie-poster">
+            <div class="movie-details">
+                <h1 id="title">Название фильма (8.5)</h1>
+                <h3 id="sub-title">Original Title</h3>
+                <p class="rating" id="rating">Рейтинг на Кинопоиске: 8.5</p>
+                <p class="description" id="description">Описание фильма. Здесь идет краткое содержание сюжета и основные
+                    моменты фильма, которые могут заинтересовать зрителя.</p>
+            </div>
+        </div>
+
+        <div class="schedule">
+            <h2>Расписание</h2>
+            <table class="schedule-table">
+                <tr>
+                    <td class="day" id="day0">Пн, </td>
+                    <td class="day" id="day1">Вт, </td>
+                    <td class="day" id="day2">Ср, </td>
+                    <td class="day" id="day3">Чт, </td>
+                    <td class="day" id="day4">Пт, </td>
+                    <td class="day" id="day5">Сб, </td>
+                    <td class="day" id="day6">Вс, </td>
+                </tr>
+            </table>
+            <div class="schedule">
+                <table class="schedule-table" id="schedule-table">
+                </table>
+            </div>
+        </div>
+
+        <div class="seat-selection">
+            <h2>Выбор места</h2>
+            <table align="center">
+                <tr>
+                    <td>
+                        <div class="screen">Экран</div>
+                        <div class="seats" id="seats">
+                            <div class="row">
+                                <span>1</span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                            </div>
+                            <div class="row">
+                                <span>2</span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                            </div>
+                            <div class="row">
+                                <span>3</span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                            </div>
+                            <div class="row">
+                                <span>4</span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                            </div>
+                            <div class="row">
+                                <span>5</span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                            </div>
+                            <div class="row">
+                                <span>6</span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                                <span class="seat blocked"></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="selection-info">
+                            <p>Зал:</p>
+                            <h3 id="hall">Красный</h3>
+                            <p>Дата и время:</p>
+                            <h3 id="dateTime">8 июл 12:00</h3>
+                            <p>Места:</p>
+                            <h3 id="rowsSeats">------</h3>
+                            <h3 id="allAmount">Итоговая сумма: ------</h3>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

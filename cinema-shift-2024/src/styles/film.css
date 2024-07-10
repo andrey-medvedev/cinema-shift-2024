@@ -1,0 +1,255 @@
+@import './index.css';
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.back-button {
+    margin: 70px 20px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.back-button a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.back-button a img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.movie-info {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.movie-poster {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.movie-details h1,
+.movie-details h3,
+.movie-details .rating,
+.schedule h2,
+.seat-selection h2,
+.seat-selection h3 {
+    margin: 0;
+}
+
+.movie-details h1 {
+    font-size: 36px;
+    color: var(--highlight-color);
+}
+
+.movie-details h3 {
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+.movie-details .rating {
+    font-size: 20px;
+    color: var(--highlight-color);
+}
+
+.movie-details .description,
+.selection-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.schedule h2,
+.seat-selection h2 {
+    font-size: 28px;
+    color: var(--highlight-color);
+}
+
+.schedule-table {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.schedule-table th {
+    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
+    color: var(--dark-blue);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.schedule-table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.schedule-table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.schedule-table td {
+    padding: 10px 20px;
+    background-color: #004C66;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.schedule-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.schedule-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.schedule-table td.time:hover,
+.schedule-table td.day:hover {
+    background-color: #04384a;
+    cursor: pointer;
+}
+
+.showtimes {
+    display: none;
+    margin-top: 20px;
+}
+
+.showtime {
+    margin-bottom: 10px;
+}
+
+.seat-selection h3 {
+    font-size: 15px;
+    color: var(--highlight-color);
+}
+
+.screen {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: inline-block;
+    background-color: lightgray;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.seat.available {
+    background-color: var(--highlight-color);
+}
+
+.seat.blocked {
+    background-color: gray;
+    pointer-events: none;
+}
+
+.seat.selected {
+    background-color: #117799;
+}
+
+#amount,
+#rowsSeats {
+    width: 200px;
+    min-height: 20px;
+    overflow: hidden;
+}
+
+.selection-info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.buy-button {
+    margin-top: 10px;
+    background: linear-gradient(135deg, var(--highlight-color), var(--accent-color));
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+}
+
+.buy-button:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+}
+
+@media (max-width: 425px) {
+    .navigation {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        background-color: var(--bg-color);
+    }
+
+    .content {
+        margin-top: 80px;
+    }
+
+    .movie-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie-poster {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .schedule-table .day {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .seat {
+        width: 15px;
+        height: 15px;
+        margin: 3px;
+    }
+
+    .selection-info p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,131 @@
+:root {
+    --bg-color: #002A3A;
+    --text-color: #f0f0f0;
+    --highlight-color: #F8B300;
+    --secondary-color: #00AAB7;
+    --accent-color: #C77000;
+    --dark-blue: #002A3A;
+    --dark-cyan: #006080;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.navigation {
+    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
+    color: var(--dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.navigation .left-menu,
+.navigation .right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navigation .left-menu {
+    margin-right: auto;
+}
+
+.navigation .menu-item {
+    margin: 5px;
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navigation .menu-item img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.movie-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1440px;
+    margin: 80px auto 20px;
+}
+
+.movie {
+    width: 350px;
+    margin: 0 15px 30px;
+    padding: 10px;
+    background-color: var(--dark-cyan);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.movie:hover {
+    transform: translateY(-5px);
+}
+
+.movie img {
+    width: 100%;
+    max-width: 300px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.movie p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.movie h2,
+.movie .actors,
+.movie .rating {
+    color: var(--highlight-color);
+}
+
+.movie .details-button {
+    margin-top: 10px;
+    background: linear-gradient(135deg, var(--highlight-color), var(--accent-color));
+    color: var(--text-color);
+    border: none;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
+
+.movie .details-button:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+}
+
+@media (max-width: 425px) {
+    .navigation {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        background-color: var(--bg-color);
+    }
+
+    .movie-container {
+        margin-top: 80px;
+    }
+}
