@@ -16,7 +16,7 @@ async function getCinemaFilmId(clickedButtonId) {
     const filmRating = document.getElementById('rating')
     const filmDescription = document.getElementById('description')
 
-    filmImg.src = `../static/images/cinema/film_${clickedButtonId.replace(/btn/g, '')}.webp`
+    filmImg.src = "https://shift-backend.onrender.com" + response.img
     filmName.innerHTML = `${response.name}`
     originalFilmName.innerHTML = `${response.originalName}`
     filmRating.innerHTML = `Рейтинг на кинопоиске: ${response.userRatings.kinopoisk}`
@@ -104,7 +104,6 @@ function displaySeats(id, timeSeance, newData) {
             hall.innerHTML += rowHtml
         }
     } else if (id === 'green') {
-        console.log(newData)
         colorHall.innerHTML = 'Зеленый'
         dateTime.innerHTML = timeSeance
         for (let i = 0; i < 10; i++) {

@@ -4,13 +4,16 @@ async function getCinemaToday() {
     response = await response.json()
     response = response.films
 
+    const moviePoster = document.getElementsByClassName("movie-poster")
     const yearCountryGenreInfo = document.getElementsByClassName('year-country-genre')
     const filmName = document.getElementsByClassName('filmName')
     const actors = document.getElementsByClassName('actors')
     const rating = document.getElementsByClassName('rating')
 
     for (let i = 0; i < response.length; i++) {
-
+        
+        moviePoster[i].src = "https://shift-backend.onrender.com" + response[i].img
+        
         yearCountryGenreInfo[i].innerHTML += `${response[i].releaseDate.slice(-4)}, 
             ${response[i].country.name}, 
             ${response[i].genres[0]}`
